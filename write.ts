@@ -1,5 +1,5 @@
-const args = Deno.args
+const args = Deno.args;
 
-Deno.writeTextFileSync(args[0], '你好')
+Deno.writeTextFileSync(args[0], "你好");
 
-export {}
+export {};

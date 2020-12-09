@@ -5,9 +5,9 @@ const initFiles = new Set();
 const watcher = Deno.watchFs(".");
 for await (const event of watcher) {
   console.log(">>>> event", event);
-  const file = event.paths[0]
-  if (event.kind === 'create' && !initFiles.has(file)) {
-    initFiles.add(file)
+  const file = event.paths[0];
+  if (event.kind === "create" && !initFiles.has(file)) {
+    initFiles.add(file);
     // console.log(Deno.statSync(event.paths[0]).isFile)
     // const file = await Deno.open(event.paths[0])
     // const encoder = new TextEncoder();
@@ -23,13 +23,12 @@ for await (const event of watcher) {
     //     event.paths[0]
     //   ],
     // })
-    Deno.writeTextFileSync(event.paths[0], '你好', { create: false })
-    
+    Deno.writeTextFileSync(event.paths[0], "你好", { create: false });
   }
   // if (event.kind === 'create') {
-    
+
   // }
   // Example event: { kind: "create", paths: [ "/home/alice/deno/foo.txt" ] }
 }
 
-export {}
+export {};
