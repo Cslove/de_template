@@ -29,7 +29,7 @@ const watcher = async(args: DeTemplateArgs) => {
         const content = fileStat.get(watchExt);
 
         Deno.writeTextFileSync(watchPath, content ?? '', { create: false });
-        const relPath = path.relative(watchPath, workingDir);
+        const relPath = path.relative(workingDir, watchPath);
         console.log(color.green(`  🚀 successful created .${watchExt} template content to ${relPath}`))
       }
     }
