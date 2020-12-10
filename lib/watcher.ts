@@ -6,7 +6,7 @@ const watcher = async (args: DeTemplateArgs) => {
   const { template, cwd } = args;
   const templatePath = path.resolve(template as string);
   const workingDir = path.resolve(cwd as string);
-  const fileStat = fetchTemplateFiles(templatePath);
+  const fileStat = fetchTemplateFiles(templatePath, workingDir);
   const createdFiles = new Set();
 
   const watchers = Deno.watchFs(workingDir);

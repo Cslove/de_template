@@ -19,10 +19,11 @@ const main = () => {
   if (args.h ?? args.help) {
     console.log(`
     
-  de_template: Automatically generates template content when you create a new file.
+    de_template:
+        Automatically generates template content when you create a new file.
   
     INSTALL:
-        deno install --allow-read --allow-write https://deno.land/std/http/file_server.ts
+        deno install --allow-read --allow-write https://raw.githubusercontent.com/Cslove/de_template/master/de_template.ts
 
     USAGE:
         de_template [options]
@@ -31,7 +32,8 @@ const main = () => {
         -h, --help                  Prints help information
         --template<FILE or DIR>     setting template file or directory path
         --cwd<DIR>                  watching directory, default current working directory
-    `);
+    
+        `);
     Deno.exit();
   }
   const deTemplateArg = {} as DeTemplateArgs;
