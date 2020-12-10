@@ -8,7 +8,7 @@ Insure you have been installed [Deno](https://deno.land).
 
 ```bash
 # install script via deno
-deno install --allow-read --allow-write https://deno.land/x/de_template@v1.0.2/de_template.ts
+deno install --allow-read --allow-write https://deno.land/x/de_template@v1.0.3/de_template.ts
 
 # create template file in your working dir
 mkdir .de_template
