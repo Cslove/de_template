@@ -1,11 +1,11 @@
-import { path } from '../deps.ts'
+import { path } from "../deps.ts";
 
 const stats = new Map<string, string>();
 
 export const getExt = (filePath: string) => {
   const extName = path.extname(filePath);
   return extName.slice(1);
-}
+};
 
 const fetchTemplateFiles = (templatePath: string) => {
   const info = Deno.statSync(templatePath);
@@ -15,17 +15,17 @@ const fetchTemplateFiles = (templatePath: string) => {
     const content = Deno.readTextFileSync(templatePath);
     stats.set(extName, content);
 
-    return stats
+    return stats;
   }
 
   if (info.isDirectory) {
     for (const dirEntry of Deno.readDirSync(templatePath)) {
       const fileOrDir = path.join(templatePath, dirEntry.name);
-      fetchTemplateFiles(fileOrDir)
+      fetchTemplateFiles(fileOrDir);
     }
   }
 
-  return stats
-}
+  return stats;
+};
 
-export default fetchTemplateFiles
+export default fetchTemplateFiles;
