@@ -1,3 +1,5 @@
+#!/usr/bin/env -S deno run --allow-write --allow-read 
+
 import { color, parse } from "./deps.ts";
 import watcher from "./lib/watcher.ts";
 
