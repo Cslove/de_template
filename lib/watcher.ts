@@ -18,7 +18,8 @@ const watcher = async (args: DeTemplateArgs) => {
 
   for await (const watch of watchers) {
     const watchPath = watch.paths[0];
-    if (watch.kind === "create" && !createdFiles.has(watchPath)) {
+    const watchExt = getExt(watchPath);
+    if (watch.kind === "create" && !createdFiles.has(watchPath) && fileStat.has(watchExt)) {
       const watchStat = Deno.statSync(watchPath);
 
       if (watchStat.isFile) {
