@@ -25,7 +25,7 @@ const main = () => {
         Automatically generates template content when you create a new file.
   
     INSTALL:
-        deno install --allow-read --allow-write https://deno.land/x/de_template@v1.0.3/de_template.ts
+        deno install --allow-read --allow-write https://deno.land/x/de_template@v1.0.4/de_template.ts
 
     USAGE:
         de_template [options]
